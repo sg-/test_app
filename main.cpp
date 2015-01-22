@@ -131,7 +131,7 @@ hex_parse_status_t parse_hex_blob(uint8_t *hex_buf, uint32_t hex_buf_size, uint8
                             // keeping a record of the last hex record
                             memcpy(shadow_line.buf, line.buf, sizeof(hex_line_t));
                             // move from line buffer back to input buffer
-                            memcpy((uint8_t *)bin_buf, (uint8_t *)line.data, line.byte_count);
+                            memcpy(bin_buf, line.data, line.byte_count);
                             bin_buf += line.byte_count;
                             *bin_buf_num_bytes = (uint32_t)(*bin_buf_num_bytes) + line.byte_count;
                             // this stores the last known start address of decoded data
@@ -142,8 +142,8 @@ hex_parse_status_t parse_hex_blob(uint8_t *hex_buf, uint32_t hex_buf_size, uint8
                             // fill in all FF here and force a return (or break from this logic)
                             memset(bin_buf, 0xff, (bin_buf_size - (uint32_t)(*bin_buf_num_bytes)));
                             // figure the start address before returning    
-                            *bin_buf_address = last_known_address - (uint32_t)(*bin_buf_num_bytes);
-                            *bin_buf_num_bytes = bin_buf_size;
+                            //*bin_buf_address = last_known_address - (uint32_t)(*bin_buf_num_bytes);
+                            //*bin_buf_num_bytes = bin_buf_size;
                             return HEX_PARSE_EOF;
                         
                         case EXT_LINEAR_ADDR_RECORD:
@@ -588,6 +588,8 @@ uint8_t const hex_file[] = ":020000040000FA\n"
 
 uint8_t *hex_loc = (uint8_t *)hex_file;
 uint8_t bin_out_buf[256] = {0};
+
+RawSerial pc(USBTX, USBRX);
     
 int main()
 {
@@ -600,10 +602,10 @@ int main()
         hex_parse_status_t status;
         do {
             status = parse_hex_blob(hex_loc, 512, bin_out_buf, sizeof(bin_out_buf), &address, &buf_written);
-            if (HEX_PARSE_OK == status) {
+            if ((HEX_PARSE_EOF == status) || (HEX_PARSE_OK == status)) {
                 //print the decoded file contents here
                 for(int i = 0; i < buf_written; i++) {
-                    putc(bin_out_buf[i], stdout);
+                    pc.putc(bin_out_buf[i]);
                 }
                 address = address;
                 buf_written = buf_written;
