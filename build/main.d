@@ -80,3 +80,4 @@
 .\build\main.o: mbed\wait_api.h
 .\build\main.o: mbed\sleep_api.h
 .\build\main.o: mbed\rtc_time.h
+.\build\main.o: hex_file.h

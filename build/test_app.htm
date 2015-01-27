@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\build\test_app.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\build\test_app.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Thu Jan 22 16:19:55 2015
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5.03 [Build 76]: Last Updated: Tue Jan 27 17:04:33 2015
 <BR><P>
 <H3>Maximum Stack Usage =        320 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -599,7 +599,7 @@ Global Symbols
 <P><STRONG><a name="[8e]"></a>__aeabi_memset</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, aeabi_memset.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[8f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_memset
 </UL>
-<BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_hex_blob(unsigned char*, unsigned, unsigned char*, unsigned, unsigned*, unsigned*)
+<BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_hex_blob(unsigned char*, unsigned, unsigned*, unsigned char*, unsigned, unsigned*, unsigned*)
 </UL>
 
 <P><STRONG><a name="[fb]"></a>__rt_ddtor_pointer_addr</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, rt_ddtor_pointer_addr.o(.text))
@@ -613,9 +613,9 @@ Global Symbols
 
 <P><STRONG><a name="[13c]"></a>reset_hex_parser()</STRONG> (Thumb, 2 bytes, Stack size 0 bytes, main.o(.text), UNUSED)
 
-<P><STRONG><a name="[90]"></a>parse_hex_blob(unsigned char*, unsigned, unsigned char*, unsigned, unsigned*, unsigned*)</STRONG> (Thumb, 504 bytes, Stack size 32 bytes, main.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 44 + Unknown Stack Size
-<LI>Call Chain = parse_hex_blob(unsigned char*, unsigned, unsigned char*, unsigned, unsigned*, unsigned*) &rArr; validate_checksum(hex_line_t*)
+<P><STRONG><a name="[90]"></a>parse_hex_blob(unsigned char*, unsigned, unsigned*, unsigned char*, unsigned, unsigned*, unsigned*)</STRONG> (Thumb, 518 bytes, Stack size 40 bytes, main.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 52 + Unknown Stack Size
+<LI>Call Chain = parse_hex_blob(unsigned char*, unsigned, unsigned*, unsigned char*, unsigned, unsigned*, unsigned*) &rArr; validate_checksum(hex_line_t*)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[92]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;validate_checksum(hex_line_t*)
 <LI><a href="#[95]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;ctoh(char)
@@ -627,13 +627,13 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[96]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;$Super$$main
 </UL>
 
-<P><STRONG><a name="[96]"></a>$Super$$main</STRONG> (Thumb, 142 bytes, Stack size 24 bytes, main.o(.text))
+<P><STRONG><a name="[96]"></a>$Super$$main</STRONG> (Thumb, 252 bytes, Stack size 24 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 200 + Unknown Stack Size
 <LI>Call Chain = $Super$$main &rArr; error &rArr; exit &rArr; mbed_die &rArr;  mbed_assert_internal (Cycle)
 </UL>
 <BR>[Calls]<UL><LI><a href="#[98]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;error
 <LI><a href="#[97]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;mbed::RawSerial::putc(int)
-<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_hex_blob(unsigned char*, unsigned, unsigned char*, unsigned, unsigned*, unsigned*)
+<LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_hex_blob(unsigned char*, unsigned, unsigned*, unsigned char*, unsigned, unsigned*, unsigned*)
 </UL>
 <BR>[Called By]<UL><LI><a href="#[84]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
@@ -698,7 +698,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[91]"></a>__aeabi_memcpy</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, rt_memcpy_v6.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_hex_blob(unsigned char*, unsigned, unsigned char*, unsigned, unsigned*, unsigned*)
+<BR><BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_hex_blob(unsigned char*, unsigned, unsigned*, unsigned char*, unsigned, unsigned*, unsigned*)
 </UL>
 
 <P><STRONG><a name="[a7]"></a>__rt_memcpy</STRONG> (Thumb, 138 bytes, Stack size 0 bytes, rt_memcpy_v6.o(.text), UNUSED)
@@ -726,7 +726,7 @@ Global Symbols
 <P><STRONG><a name="[94]"></a>__aeabi_memclr4</STRONG> (Thumb, 0 bytes, Stack size 4 bytes, rt_memclr_w.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 4<LI>Call Chain = __aeabi_memclr4
 </UL>
-<BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_hex_blob(unsigned char*, unsigned, unsigned char*, unsigned, unsigned*, unsigned*)
+<BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_hex_blob(unsigned char*, unsigned, unsigned*, unsigned char*, unsigned, unsigned*, unsigned*)
 <LI><a href="#[c3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_fclose_internal
 <LI><a href="#[d9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;fopen
 <LI><a href="#[7b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_initio
@@ -883,9 +883,9 @@ Global Symbols
 <BR>[Calls]<UL><LI><a href="#[9d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_int_common
 <LI><a href="#[b3]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_ll_udiv10
 </UL>
-<BR>[Called By]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_lld
-<LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_lli
+<BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_lli
 <LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_llu
+<LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;_printf_lld
 </UL>
 
 <P><STRONG><a name="[b4]"></a>_printf_longlong_oct</STRONG> (Thumb, 76 bytes, Stack size 8 bytes, _printf_oct_int_ll.o(.text))
@@ -2024,17 +2024,17 @@ Global Symbols
 Local Symbols
 </H3>
 <P><STRONG><a name="[93]"></a>swap16(unsigned short)</STRONG> (Thumb, 12 bytes, Stack size 0 bytes, main.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_hex_blob(unsigned char*, unsigned, unsigned char*, unsigned, unsigned*, unsigned*)
+<BR><BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_hex_blob(unsigned char*, unsigned, unsigned*, unsigned char*, unsigned, unsigned*, unsigned*)
 </UL>
 
 <P><STRONG><a name="[95]"></a>ctoh(char)</STRONG> (Thumb, 22 bytes, Stack size 0 bytes, main.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_hex_blob(unsigned char*, unsigned, unsigned char*, unsigned, unsigned*, unsigned*)
+<BR><BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_hex_blob(unsigned char*, unsigned, unsigned*, unsigned char*, unsigned, unsigned*, unsigned*)
 </UL>
 
 <P><STRONG><a name="[92]"></a>validate_checksum(hex_line_t*)</STRONG> (Thumb, 52 bytes, Stack size 12 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = validate_checksum(hex_line_t*)
 </UL>
-<BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_hex_blob(unsigned char*, unsigned, unsigned char*, unsigned, unsigned*, unsigned*)
+<BR>[Called By]<UL><LI><a href="#[90]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;parse_hex_blob(unsigned char*, unsigned, unsigned*, unsigned char*, unsigned, unsigned*, unsigned*)
 </UL>
 
 <P><STRONG><a name="[4a]"></a>__sti___8_main_cpp</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, main.o(.text))
